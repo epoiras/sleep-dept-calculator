@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <script>
+      const getSleepHours = day =>{
+        if(day === "monday"){
+          return 8;
+        } else if(day === "tuesday") {
+          return 8;
+        } else if(day === "wednesday"){
+          return 8;
+        } else if(day === "thursday"){
+          return 8;
+        } else if(day === "friday"){
+          return 3;
+        } else if(day === "saturday"){
+          return 3;
+        } else if(day === "sunday"){
+          return 3;
+        } else {
+          return "invalid"}
+      }
+  
+
+      const getActualSleepHours = ()=> getSleepHours( "monday") + getSleepHours("tuesday") + getSleepHours("wednesday") + getSleepHours("thursday") + getSleepHours("friday") + getSleepHours("saturday") + getSleepHours("sunday");
+      
+        
+      const getIdealSleepHours = prefer => {
+        const idealHours = prefer
+        return idealHours * 7;
+      };
+  
+
+      const calculateSleepDebt = () => {
+        let actualSleepHours = getActualSleepHours(6)
+        console.log(actualSleepHours)
+        let idealSleepHours = getIdealSleepHours(6)
+        console.log(idealSleepHours)
+        if(actualSleepHours === idealSleepHours){
+          console.log("Perfect amount of sleep!");
+        } else if(actualSleepHours < idealSleepHours){
+          console.log("You should get some rest!");
+        } else if(actualSleepHours > idealSleepHours){
+          console.log("You got hours more sleep than needed!")
+        } else { console.log("Error")}
+      }
+        calculateSleepDebt()
+    </script>
+      
+  </body>
+</html>
